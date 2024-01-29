@@ -10,7 +10,7 @@ function setup() {
     stars[i] = new Star();
   }
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 14; i++) {
     fishes[i] = new Fish();
   }
 }
@@ -33,20 +33,20 @@ class Star {
 class Fish {
   constructor() {
     this.x = random(width);
-    this.y = random(300, height - 25);
-    this.size = random(10, 30);
-    this.speed = random(1, 3);
+    this.y = random(280, height - 25);
+    this.size = random(15, 30);
+    this.speed = random(1, 4);
     this.direction = random() > 0.5 ? 1 : -1; // 1 for right, -1 for left
   }
   draw() {
     fill(203, 195, 227); // Orange color for fish
     ellipse(this.x, this.y, this.size, this.size / 2);
     triangle(
-      this.x - this.size / 2,
+      this.x - (this.size / 2)*this.direction,
       this.y,
-      this.x - this.size / 2 - this.size / 4,
+      this.x - (this.size / 2 + this.size / 4)*this.direction,
       this.y - this.size / 4,
-      this.x - this.size / 2 - this.size / 4,
+      this.x - (this.size / 2 + this.size / 4)*this.direction,
       this.y + this.size / 4
     );
   }
