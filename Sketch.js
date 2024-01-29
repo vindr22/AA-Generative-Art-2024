@@ -34,12 +34,13 @@ class Fish {
   constructor() {
     this.x = random(width);
     this.y = random(280, height - 25);
+    this.color = color(random(250),random(250),random(250))
     this.size = random(15, 30);
     this.speed = random(1, 4);
     this.direction = random() > 0.5 ? 1 : -1; // 1 for right, -1 for left
   }
   draw() {
-    fill(203, 195, 227); // Orange color for fish
+    fill(this.color) // random rainbow color for fish
     ellipse(this.x, this.y, this.size, this.size / 2);
     triangle(
       this.x - (this.size / 2)*this.direction,
