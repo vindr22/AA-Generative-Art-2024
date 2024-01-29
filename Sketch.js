@@ -25,7 +25,7 @@ class Star {
 }
 
 function draw() {
-  background(0, 0, 87);
+  background(21, 28, 50);
   
   //star
   fill(255,255,255)
@@ -44,7 +44,7 @@ function draw() {
   }  
 
   //ocean
-  fill(10, 56, 226);
+  fill(0,0,140);
 
   beginShape();
 
